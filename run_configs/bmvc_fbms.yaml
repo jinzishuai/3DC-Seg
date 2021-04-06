@@ -3,7 +3,7 @@ NAME: "bmvc_fbms"
 DATASETS:
   MAX_TEMPORAL_GAP: 8
   TEST: "FBMSDataset"
-  TEST_ROOT: "/globalwork/data/fbms/"
+  TEST_ROOT: "/home/seki/ZeroBox/FBMS_Testset/Testset"
 TRAINING:
   PRECISION: "mixed"
 DATALOADER:

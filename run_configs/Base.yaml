@@ -38,10 +38,10 @@ INPUT:
   RESIZE_SHAPE_TEST: (374, 1242)
   TW: 8
 DATASETS:
-  TRAIN: "Davis"
-  TRAIN_ROOT: "/globalwork/data/DAVIS-Unsupervised/DAVIS/"
-  TEST: "Davis"
-  TEST_ROOT: "/globalwork/data/DAVIS-Unsupervised/DAVIS/"
+  TRAIN: "FBMSDataset"
+  TRAIN_ROOT: "/home/seki/ZeroBox/FBMS_Testset/Testset"
+  TEST: "FBMSDataset"
+  TEST_ROOT: "/home/seki/ZeroBox/FBMS_Testset/Testset"
   MAX_TEMPORAL_GAP: 8
 DATALOADER:
   NUM_SAMPLES: -1
