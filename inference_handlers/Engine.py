@@ -95,7 +95,7 @@ class SaliencyInferenceEngine(BaseInferenceEngine):
         logging.info(
           'Sequence {}: F_max {}  MAE {} IOU {}'.format(input_dict['info'][0]['video'], f, mae, ious_per_video.avg))
 
-    print("IOU: {}".format(iou))
+    # print("IOU: {}".format(iou))
     gt = np.hstack(gt_for_eval).flatten()
     p = np.hstack(pred_for_eval).flatten()
     precision, recall, _ = precision_recall_curve(gt, p)
