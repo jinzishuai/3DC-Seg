@@ -98,7 +98,7 @@ class FBMSDataset(Davis):
 
 if __name__ == '__main__':
   fbms = FBMSDataset(root=FBMS_ROOT,
-                     resize_shape=(480, 854), resize_mode=ResizeMode.FIXED_SIZE, mode="test")
+                     resize_shape=(480, 854), resize_mode=ResizeMode.FIXED_SIZE, mode="train")
 
   # fbms.set_video_id('marple4')
   print("Dataset size: {}".format(fbms.__len__()))

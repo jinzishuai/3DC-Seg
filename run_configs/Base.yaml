@@ -39,9 +39,9 @@ INPUT:
   TW: 8
 DATASETS:
   TRAIN: "FBMSDataset"
-  TRAIN_ROOT: "/home/seki/ZeroBox/FBMS_Testset/Testset"
+  TRAIN_ROOT: "/home/seki/ZeroBox/FBMS_Dataset/"
   TEST: "FBMSDataset"
-  TEST_ROOT: "/home/seki/ZeroBox/FBMS_Testset/Testset"
+  TEST_ROOT: "/home/seki/ZeroBox/FBMS_Dataset/"
   MAX_TEMPORAL_GAP: 8
 DATALOADER:
   NUM_SAMPLES: -1
