@@ -55,12 +55,14 @@ class FBMSDataset(Davis):
     mask_dir = os.path.join(self.root, 'inst', subset)
     subset = "Trainingset" if self.is_train() else "Testset"
     image_dir = os.path.join(self.root, subset)
+    print(f"mask_dir={mask_dir}, image_dir={image_dir}")
 
     videos = glob.glob(image_dir + "/*")
     for _video in videos:
       sequence = _video.split("/")[-1]
       self.videos.append(sequence)
       vid_files = glob.glob(os.path.join(image_dir, sequence, '*.jpg'))
+      print(f"vid_files={vid_files}")
       shape = imread(vid_files[0]).shape[:2]
       self.index_length[sequence] = len(vid_files[0].split("/")[-1].split(".")[0].split("_")[-1])
       self.gt_frames[sequence] = [int(f.split("/")[-1].split("_")[-1].split(".")[0])
@@ -98,7 +100,7 @@ class FBMSDataset(Davis):
 
 if __name__ == '__main__':
   fbms = FBMSDataset(root=FBMS_ROOT,
-                     resize_shape=(480, 854), resize_mode=ResizeMode.FIXED_SIZE, mode="train")
+                     resize_shape=(480, 854), resize_mode=ResizeMode.FIXED_SIZE, mode="test")
 
   # fbms.set_video_id('marple4')
   print("Dataset size: {}".format(fbms.__len__()))
