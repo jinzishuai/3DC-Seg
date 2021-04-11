@@ -60,11 +60,13 @@ class FBMSDataset(Davis):
     videos = glob.glob(image_dir + "/*")
     for _video in videos:
       sequence = _video.split("/")[-1]
+      print(f"sequence={sequence}")
       self.videos.append(sequence)
       vid_files = glob.glob(os.path.join(image_dir, sequence, '*.jpg'))
       print(f"vid_files={vid_files}")
       shape = imread(vid_files[0]).shape[:2]
       self.index_length[sequence] = len(vid_files[0].split("/")[-1].split(".")[0].split("_")[-1])
+      print(f"gt_frames from {os.path.join(mask_dir, sequence, '*.png')}")
       self.gt_frames[sequence] = [int(f.split("/")[-1].split("_")[-1].split(".")[0])
                                   for f in glob.glob(os.path.join(mask_dir, sequence, '*.png'))]
       self.num_frames[sequence] = len(vid_files)
