@@ -46,6 +46,7 @@ class SaliencyInferenceEngine(BaseInferenceEngine):
 
     with torch.no_grad():
       for seq in dataset.get_video_ids():
+        print(f"seq={seq}")
         ious_per_video = AverageMeter()
         dataset.set_video_id(seq)
         # test_sampler = torch.utils.data.distributed.DistributedSampler(dataset, shuffle=False) if distributed else None
@@ -95,7 +96,7 @@ class SaliencyInferenceEngine(BaseInferenceEngine):
         logging.info(
           'Sequence {}: F_max {}  MAE {} IOU {}'.format(input_dict['info'][0]['video'], f, mae, ious_per_video.avg))
 
-    # print("IOU: {}".format(iou))
+    print("IOU: {}".format(iou))
     gt = np.hstack(gt_for_eval).flatten()
     p = np.hstack(pred_for_eval).flatten()
     precision, recall, _ = precision_recall_curve(gt, p)
