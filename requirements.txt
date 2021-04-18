@@ -1,4 +1,4 @@
-apex==0.1
+#apex==0.1
 Deprecated==1.2.10
 fvcore==0.1.1.post200513
 imageio-ffmpeg==0.4.1
@@ -12,9 +12,9 @@ scikit-image==0.16.2
 scikit-learn==0.21.3
 scipy==1.1.0
 tensorboard==1.15.0
-torch==1.5.1
-torchsummary==1.5.1
-torchvision==0.6.0a0+35d732a
+-f https://download.pytorch.org/whl/torch_stable.html
+torch==1.7.0+cu110
+torchvision==0.8.1+cu110
 tornado==6.0.3
 tqdm==4.43.0
 yacs==0.1.6

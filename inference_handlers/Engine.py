@@ -46,6 +46,7 @@ class SaliencyInferenceEngine(BaseInferenceEngine):
 
     with torch.no_grad():
       for seq in dataset.get_video_ids():
+        print(f"seq={seq}")
         ious_per_video = AverageMeter()
         dataset.set_video_id(seq)
         # test_sampler = torch.utils.data.distributed.DistributedSampler(dataset, shuffle=False) if distributed else None
